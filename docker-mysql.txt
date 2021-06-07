@@ -1,0 +1,23 @@
+docker build -t eos/mysql .
+
+
+docker run -d -p 13306:3306 eos/mysql
+
+
+
+
+insert into t_pressure_record (time,name,url,
+    method,concurrent,fail_num,fail_rate, success_num, 
+   success_rate, total_request,total_time,avg_time,pv,
+   daytime,company,note,qps) values 
+   ('2019-09-19 12:00:02','中国','','GET',100,0,1,100,1,200,27,0.9,1000,
+   '2019110105','HSBC','',28);
+
+
+
+为了永久性保留更改，您可以修改 /etc/docker/daemon.json 文件并添加上 registry-mirrors 键值。
+
+{
+  "registry-mirrors": ["https://registry.docker-cn.com"]
+}
+

@@ -1,0 +1,7 @@
+version: '2'
+services:
+    eosmysql:
+        build: .
+        restart: always
+        ports:
+            - "13306:3306"
